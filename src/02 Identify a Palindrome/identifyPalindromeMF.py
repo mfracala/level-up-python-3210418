@@ -1,12 +1,9 @@
+import re
+
 def checkPalindrome(inString):
-    inString = inString.replace(" ","")
-    inString = inString.replace("-", "")
-    inString = inString.lower()
-    revString = inString[::-1]
-    if inString == revString:
-        return True
-    else:
-        return False
+  foreward = ''.join(re.findall(r'[a-z]',inString.lower()))
+  backward = foreward[::-1]
+  return foreward == backward 
 
 checkInput = input('enter a string:')
 isPali = checkPalindrome(checkInput)
