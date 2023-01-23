@@ -1,10 +1,12 @@
 def getPrimes(userNum):
   primes = []
-  count = userNum
-  while count > 1:
-    if userNum % count == 0:
-      primes.append(count)
-    count -=1
+  factor = 2
+  while factor <= userNum:
+    if userNum % factor == 0:
+      primes.append(factor)
+      userNum = userNum//factor
+    else:
+      factor +=1   
   return primes
 
 userNum = float(input('enter a number:'))
